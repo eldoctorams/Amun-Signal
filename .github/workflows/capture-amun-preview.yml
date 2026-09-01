@@ -54,7 +54,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/assets/amun-signal-interface.png
+          # The upstream project ignores docs/assets globally; this generated,
+          # intentional launch artifact must still be versioned.
+          git add --force docs/assets/amun-signal-interface.png
           if git diff --cached --quiet; then
             exit 0
           fi
