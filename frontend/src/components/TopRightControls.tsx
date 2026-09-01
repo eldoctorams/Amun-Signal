@@ -503,7 +503,7 @@ export default function TopRightControls({
             : '';
         setErrorMessage(
           message === 'desktop_update_installed_restart_required'
-            ? 'Update installed. Restart ShadowBroker to finish applying it.'
+            ? 'Update installed. Restart AMUN SIGNAL to finish applying it.'
             : message || 'Desktop updater failed. Use manual download if this keeps happening.',
         );
         setUpdateStatus('update_error');

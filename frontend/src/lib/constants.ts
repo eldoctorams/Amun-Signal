@@ -1,4 +1,4 @@
-// ─── ShadowBroker Frontend Constants ────────────────────────────────────────
+// ─── AMUN SIGNAL Frontend Constants ────────────────────────────────────────
 // Centralized magic numbers. Import from here instead of hardcoding.
 
 // ─── Data Polling ───────────────────────────────────────────────────────────

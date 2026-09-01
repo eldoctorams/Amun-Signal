@@ -1,4 +1,4 @@
-# ShadowBroker Frontend
+# AMUN SIGNAL Frontend
 
 Next.js 16 dashboard with MapLibre GL and Framer Motion.
 

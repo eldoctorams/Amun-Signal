@@ -1,14 +1,14 @@
-# ShadowBroker — Meshtastic MQTT Remediation
+# AMUN SIGNAL — Meshtastic MQTT Remediation
 
 **Version:** 0.9.6  
 **Date:** 2026-04-12  
-**Re:** [meshtastic/firmware#6131](https://github.com/meshtastic/firmware/issues/6131) — Excessive MQTT traffic from ShadowBroker clients
+**Re:** [meshtastic/firmware#6131](https://github.com/meshtastic/firmware/issues/6131) — Excessive MQTT traffic from AMUN SIGNAL clients
 
 ---
 
 ## What happened
 
-ShadowBroker is an open-source OSINT situational awareness platform that includes a Meshtastic MQTT listener for displaying mesh network activity on a global map. In prior versions, the MQTT bridge:
+AMUN SIGNAL is an open-source OSINT situational awareness platform that includes a Meshtastic MQTT listener for displaying mesh network activity on a global map. In prior versions, the MQTT bridge:
 
 - Subscribed to **28 wildcard topics** (`msh/{region}/#`) covering every known official and community root on startup
 - Used an aggressive reconnect policy (min 1s / max 30s backoff)
@@ -55,7 +55,7 @@ Inbound messages are capped at **100 messages per minute** using a sliding windo
 
 ### 5. Versioned client ID
 
-Client IDs changed from `sbmesh-{uuid}` to `sb096-{uuid}` so the Meshtastic team can identify ShadowBroker clients and track adoption of the fix by version.
+Client IDs changed from `sbmesh-{uuid}` to `sb096-{uuid}` so the Meshtastic team can identify AMUN SIGNAL clients and track adoption of the fix by version.
 
 ---
 
@@ -69,7 +69,7 @@ Client IDs changed from `sbmesh-{uuid}` to `sb096-{uuid}` so the Meshtastic team
 | `MESH_MQTT_BROKER` | `mqtt.meshtastic.org` | Broker hostname |
 | `MESH_MQTT_PORT` | `1883` | Broker port |
 | `MESH_MQTT_USER` | `meshdev` | Broker username |
-| `MESH_MQTT_PASS` | `large4cats` | Broker password |
+| `MESH_MQTT_PASS` | `<set-a-strong-password>` | Broker password |
 | `MESH_MQTT_PSK` | _(empty)_ | Hex-encoded PSK (empty = default LongFast key) |
 
 ---
@@ -85,5 +85,5 @@ Client IDs changed from `sbmesh-{uuid}` to `sb096-{uuid}` so the Meshtastic team
 
 ## Contact
 
-Repository: [github.com/BigBodyCobain/Shadowbroker](https://github.com/BigBodyCobain/Shadowbroker)  
-Maintainer: BigBodyCobain
+Repository: [github.com/eldoctorams/Amun-Signal](https://github.com/eldoctorams/Amun-Signal)  
+Maintainer: Dr. Ahmed Mohamed El Sayed

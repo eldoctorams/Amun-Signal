@@ -212,7 +212,7 @@ const SarModeChooserModal = React.memo(function SarModeChooserModal({
             <div className="p-5 space-y-5">
               <div className="text-sm text-cyan-200/90">
                 SAR (synthetic aperture radar) detects ground changes through cloud
-                cover, at night, anywhere on Earth. ShadowBroker offers two modes —
+                cover, at night, anywhere on Earth. AMUN SIGNAL offers two modes —
                 both free. Pick one.
               </div>
 

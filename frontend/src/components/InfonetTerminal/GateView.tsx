@@ -318,7 +318,7 @@ export default function GateView({
 
   const gateId = useMemo(() => String(gateName || '').trim().toLowerCase(), [gateName]);
   const introMessage =
-    GATE_INTROS[gateId] || 'Welcome to this gate. Be civil. The Shadowbroker is watching.';
+    GATE_INTROS[gateId] || 'Welcome to this gate. Be civil. The AMUN SIGNAL is watching.';
 
   useEffect(() => {
     setCompatActive(hasGateCompatFallbackApproval(gateId));
@@ -926,7 +926,7 @@ export default function GateView({
                 persona === 'shadowbroker' ? 'text-red-500 animate-pulse font-bold' : 'text-green-400'
               }
             >
-              {persona}
+              {persona === 'shadowbroker' ? 'AMUN SIGNAL' : persona}
             </span>
           </div>
         </div>
@@ -1040,7 +1040,7 @@ export default function GateView({
             <div className="text-xs mb-1 text-gray-500">
               Posted by:{' '}
               <span className="text-red-500 font-bold animate-pulse drop-shadow-[0_0_5px_rgba(239,68,68,0.8)]">
-                shadowbroker
+                AMUN SIGNAL
               </span>
               <span className="text-gray-600 ml-2">PINNED</span>
             </div>

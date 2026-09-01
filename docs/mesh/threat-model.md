@@ -1,6 +1,6 @@
-# ShadowBroker InfoNet Threat Model
+# AMUN SIGNAL InfoNet Threat Model
 
-ShadowBroker v0.9.7 ships InfoNet and Wormhole as an experimental testnet.
+AMUN SIGNAL v0.9.7 ships InfoNet and Wormhole as an experimental testnet.
 This document is the release-facing threat model for those systems. It is
 intended to keep README, UI, and release claims aligned with the implementation.
 

@@ -1,6 +1,6 @@
 # APRS-IS receive configuration
 
-Shadowbroker treats public APRS-IS as community infrastructure. Receive access is therefore **off by default** and public-server subscriptions must be geographically bounded.
+AMUN SIGNAL treats public APRS-IS as community infrastructure. Receive access is therefore **off by default** and public-server subscriptions must be geographically bounded.
 
 ## Public APRS-IS (recommended client mode)
 
@@ -15,7 +15,7 @@ APRS_IS_RADIUS_KM=100
 
 Docker Compose passes these values to the backend automatically. The default host is `rotate.aprs2.net:14580`, the APRS-IS user-defined filtered client port.
 
-Shadowbroker constructs a server-side range filter of the form:
+AMUN SIGNAL constructs a server-side range filter of the form:
 
 ```text
 r/<latitude>/<longitude>/<radius-km>
@@ -46,7 +46,7 @@ APRS_IS_PORT=14580
 APRS_IS_FILTER=t/p
 ```
 
-In private-server mode, `APRS_IS_FILTER` may be any filter accepted by that server, or blank to use the server's default. Shadowbroker refuses to enable private/full-feed mode when the configured host is a known public APRS-IS domain such as `*.aprs2.net`, `*.aprs-is.net`, or `*.aprs.net`.
+In private-server mode, `APRS_IS_FILTER` may be any filter accepted by that server, or blank to use the server's default. AMUN SIGNAL refuses to enable private/full-feed mode when the configured host is a known public APRS-IS domain such as `*.aprs2.net`, `*.aprs-is.net`, or `*.aprs.net`.
 
 Use dedicated infrastructure for genuinely global/full-feed APRS collection. Do not point an unbounded client at public Tier-2 filtered servers.
 

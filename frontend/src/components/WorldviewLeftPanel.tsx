@@ -2271,7 +2271,7 @@ const WorldviewLeftPanel = React.memo(function WorldviewLeftPanel({
     <ConfirmDialog
       open={liveuamapModalOpen}
       title="Enable LiveUAMap on this server?"
-      message="Global Incidents includes LiveUAMap pins fetched by your Shadowbroker backend (Playwright). LiveUAMap will see this install's server IP. GDELT headlines load without this step. You can still disable the layer later; revoke server contact via Settings or SHADOWBROKER_ENABLE_LIVEUAMAP_SCRAPER=false."
+      message="Global Incidents includes LiveUAMap pins fetched by your AMUN SIGNAL backend (Playwright). LiveUAMap will see this install's server IP. GDELT headlines load without this step. You can disable the layer or revoke server contact from Settings at any time."
       confirmLabel="Enable & turn on layer"
       cancelLabel="Cancel"
       danger={false}

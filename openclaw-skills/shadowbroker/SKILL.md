@@ -1,22 +1,22 @@
 ---
 name: shadowbroker
 description: >
-  Query the ShadowBroker OSINT intelligence platform for real-time geospatial
+  Query the AMUN SIGNAL OSINT intelligence platform for real-time geospatial
   intelligence, place AI intel pins on the map, manage autonomous monitoring,
   inject data into native layers, fetch satellite imagery, aggregate news,
   generate intelligence reports, and participate in the Wormhole mesh network.
 ---
 
-# ShadowBroker Intelligence Skill
+# AMUN SIGNAL Intelligence Skill
 
-You have access to **ShadowBroker**, a real-time global OSINT intelligence platform
+You have access to **AMUN SIGNAL**, a real-time global OSINT intelligence platform
 running on `localhost:8000`. It tracks military flights, ships, satellites, SIGINT,
 earthquakes, fires, GDELT conflict events, prediction markets, and 30+ other data
 layers — all with geographic coordinates.
 
 ## Agent Fast Path (read first)
 
-ShadowBroker exposes dozens of read commands. **Do not explore them.** Use the
+AMUN SIGNAL exposes dozens of read commands. **Do not explore them.** Use the
 three-tool surface:
 
 | Tool | When |
@@ -57,8 +57,8 @@ Load machine-readable routing hints once: `GET /api/ai/capabilities` → `routin
 Import the client and call methods:
 
 ```python
-from sb_query import ShadowBrokerClient
-sb = ShadowBrokerClient()  # auto-detects local or remote mode
+from sb_query import AMUN SIGNALClient
+sb = AMUN SIGNALClient()  # auto-detects local or remote mode
 ```
 
 ### Local Mode (same machine)
@@ -74,10 +74,10 @@ SHADOWBROKER_URL=https://your-shadowbroker-host:8000
 SHADOWBROKER_HMAC_SECRET=your-hmac-secret-here
 ```
 
-The HMAC secret is found in ShadowBroker's **Connect OpenClaw** modal (AI Intel panel).
+The HMAC secret is found in AMUN SIGNAL's **Connect OpenClaw** modal (AI Intel panel).
 `SHADOWBROKER_HMAC_SECRET` is a shared signing secret, not a raw API key. Do not
 send it as `X-Admin-Key`, `Authorization: Bearer`, a query parameter, or any
-plain request header. The `ShadowBrokerClient` signs every direct request with
+plain request header. The `AMUN SIGNALClient` signs every direct request with
 `X-SB-Timestamp`, `X-SB-Nonce`, and `X-SB-Signature` using:
 
 ```text
@@ -188,7 +188,7 @@ The channel operates over HMAC-authenticated HTTP with body-integrity binding:
 
 ### Strategic Risk Analytics (GT early warning)
 
-Requires `GT_ANALYTICS_ENABLED=true` on the ShadowBroker backend.
+Requires `GT_ANALYTICS_ENABLED=true` on the AMUN SIGNAL backend.
 
 | Method / command | What It Returns |
 |------------------|----------------|
@@ -388,7 +388,7 @@ This pulls from both fast and slow tiers automatically.
 
 ### 7. Native Layer Data Injection
 
-Inject custom data directly into ShadowBroker's native layers (CCTV, ships, etc.):
+Inject custom data directly into AMUN SIGNAL's native layers (CCTV, ships, etc.):
 
 ```python
 # Add a custom CCTV camera to the CCTV layer
@@ -453,7 +453,7 @@ await sb.join_infonet_swarm()  # re-announce + refresh manifest
 
 # Meshtastic radio
 signals = await sb.listen_mesh(region="US", limit=20)
-await sb.send_mesh("US", "ShadowBroker AI: SIGINT anomaly detected in sector 7")
+await sb.send_mesh("US", "AMUN SIGNAL AI: SIGINT anomaly detected in sector 7")
 
 # Dead drops
 await sb.dead_drop_leave("location_hash", "anonymous intelligence payload")
@@ -490,7 +490,7 @@ summary = await sb.get_summary()
 
 ### 11. SAR (Synthetic Aperture Radar) Layer
 
-ShadowBroker can ingest free SAR data in two modes:
+AMUN SIGNAL can ingest free SAR data in two modes:
 
 - **Mode A (default-on, no account):** Sentinel-1 scene catalog from the
   Alaska Satellite Facility — pure metadata, no downloads, no DSP.  Lets the
@@ -704,7 +704,7 @@ When the user asks a question, follow this decision tree:
    - If not → open `sb.stream_updates()` first.  It tells you which layers have
      fresh data, pushes alerts instantly, and eliminates blind polling.
 
-2. **Does ShadowBroker have this data already?**
+2. **Does AMUN SIGNAL have this data already?**
    - **Natural language** → `await sb.ask(question)` (routes server-side)
    - **Batch snapshot** → `await sb.run_playbook("hot_snapshot")`
    - **Known domain** → `find_entity`, `find_flights`, `find_ships`, `search_news`, `entities_near`

@@ -164,14 +164,14 @@ const OnboardingModal = React.memo(function OnboardingModal({
       : torAddress || '<prepare remote .onion link>';
 
   const agentSnippet = [
-    `SHADOWBROKER_URL=${agentEndpoint}`,
-    agentSecret ? `SHADOWBROKER_HMAC_SECRET=${agentSecret}` : 'SHADOWBROKER_HMAC_SECRET=<generate in ShadowBroker>',
-    `SHADOWBROKER_ACCESS=${agentTier}`,
+    `AMUN_SIGNAL_URL=${agentEndpoint}`,
+    agentSecret ? `AMUN_SIGNAL_HMAC_SECRET=${agentSecret}` : 'AMUN_SIGNAL_HMAC_SECRET=<generate in AMUN SIGNAL>',
+    `AMUN_SIGNAL_ACCESS=${agentTier}`,
     '',
     '# FIRST: load available tools',
     `GET ${agentEndpoint}/api/ai/tools`,
     '',
-    '# Auth: SHADOWBROKER_HMAC_SECRET is not a raw API key.',
+    '# Auth: AMUN_SIGNAL_HMAC_SECRET is not a raw API key.',
     '# Sign every direct request with X-SB-Timestamp, X-SB-Nonce, and X-SB-Signature.',
     '# Signature input: METHOD|path|timestamp|nonce|sha256(body).',
     '# Do not send the secret as X-Admin-Key, Authorization, or a query parameter.',
@@ -274,7 +274,7 @@ const OnboardingModal = React.memo(function OnboardingModal({
       setTorAddress(data.onion_address);
       setAgentMsg({
         type: 'ok',
-        text: 'Tor is ready. The remote agent link is private to your local ShadowBroker node.',
+        text: 'Tor is ready. The remote agent link is private to your local AMUN SIGNAL node.',
       });
     } catch (error) {
       setAgentMsg({
@@ -282,7 +282,7 @@ const OnboardingModal = React.memo(function OnboardingModal({
         text:
           error instanceof Error
             ? error.message
-            : 'ShadowBroker could not install or start Tor automatically. Check network access and try again.',
+            : 'AMUN SIGNAL could not install or start Tor automatically. Check network access and try again.',
       });
     } finally {
       setTorStarting(false);
@@ -450,7 +450,7 @@ const OnboardingModal = React.memo(function OnboardingModal({
                         Local
                       </p>
                       <p className="text-[10px] text-[var(--text-muted)] font-mono mt-1">
-                        Same machine as ShadowBroker
+                        Same machine as AMUN SIGNAL
                       </p>
                     </button>
                     <button
@@ -536,7 +536,7 @@ const OnboardingModal = React.memo(function OnboardingModal({
                             TOR REQUIRED FOR REMOTE AGENTS
                           </p>
                           <p className="text-[10px] text-[var(--text-muted)] font-mono mt-1 leading-relaxed">
-                            ShadowBroker will install or use Tor locally, then create a private .onion link for this backend.
+                            AMUN SIGNAL will install or use Tor locally, then create a private .onion link for this backend.
                           </p>
                         </div>
                         <button
@@ -592,7 +592,7 @@ const OnboardingModal = React.memo(function OnboardingModal({
                         START HERE
                       </p>
                       <p className="text-sm text-[var(--text-secondary)] font-mono leading-relaxed">
-                        OpenSky Network and AIS Stream are the free keys that make ShadowBroker
+                        OpenSky Network and AIS Stream are the free keys that make AMUN SIGNAL
                         useful immediately: live aircraft and vessel tracking. Optionally add an
                         AISHub username as a slow ships-layer backup when AISStream is silent.
                         Global Fishing Watch unlocks the fishing-activity layer. Paste them below
@@ -608,7 +608,7 @@ const OnboardingModal = React.memo(function OnboardingModal({
                       QUICK LOCAL SETUP
                     </p>
                     <p className="text-sm text-[var(--text-secondary)] font-mono leading-relaxed mt-1">
-                      Paste keys here once. ShadowBroker stores them server-side only and never
+                      Paste keys here once. AMUN SIGNAL stores them server-side only and never
                       displays the secret back in the browser.
                     </p>
                   </div>

@@ -38,7 +38,10 @@ except ImportError:
     httpx = None  # Will use requests as fallback
 
 
-SB_BASE = os.environ.get("SHADOWBROKER_URL", "http://127.0.0.1:8000")
+SB_BASE = os.environ.get(
+    "AMUN_SIGNAL_URL",
+    os.environ.get("SHADOWBROKER_URL", "http://127.0.0.1:8000"),
+)
 
 
 class ShadowBrokerClient:
@@ -54,6 +57,7 @@ class ShadowBrokerClient:
         self.base = base_url.rstrip("/")
         self._hmac_secret = (
             hmac_secret
+            or os.environ.get("AMUN_SIGNAL_HMAC_SECRET", "")
             or os.environ.get("SHADOWBROKER_HMAC_SECRET", "")
             or os.environ.get("SHADOWBROKER_KEY", "")
         )
@@ -1533,4 +1537,3 @@ class ShadowBrokerClient:
                 _log.getLogger(__name__).warning("SSE connection error: %s — reconnecting in %.0fs", e, delay)
                 await asyncio.sleep(delay)
                 delay = min(delay * 2, max_reconnect_delay)
-
