@@ -20,9 +20,7 @@
 
 > The world is overflowing with signals. AMUN SIGNAL is built to reveal which ones matter, connect what appears unrelated, preserve why every conclusion was reached, and transform the unseen into intelligence an investigator can defend.
 
-**Suggested GitHub description:** `Evidence-first AI intelligence investigation OS — fuse public signals, map entities, preserve provenance, and turn the unseen into defensible intelligence.`
-
-**Topics:** `osint` · `threat-intelligence` · `fraud-investigation` · `geospatial-intelligence` · `knowledge-graph` · `evidence-ledger` · `ai-analyst` · `fastapi` · `nextjs` · `maplibre`
+**Core domains:** OSINT · threat intelligence · fraud investigation · geospatial intelligence · knowledge graphs · evidence provenance · AI-assisted analysis
 
 The project is in active transformation. Phase 0 establishes the AMUN design system, investigation domain, evidence integrity primitives, and a safe migration path from the upstream live-map runtime. See the [product roadmap](./docs/AMUN_PRODUCT_ROADMAP.md), [architecture](./docs/AMUN_ARCHITECTURE.md), and [upstream notice](./NOTICE.md).
 
@@ -100,8 +98,8 @@ ShadowBroker includes an optional **Shodan connector** for operator-supplied API
 ### From GitHub (default — uses GHCR images)
 
 ```bash
-git clone https://github.com/bigbodycobain/Shadowbroker.git
-cd Shadowbroker
+git clone https://github.com/eldoctorams/Amun-Signal.git
+cd Amun-Signal
 docker compose pull
 docker compose up -d
 ```
@@ -115,7 +113,7 @@ docker compose -f docker-compose.yml -f docker-compose.gitlab.yml pull
 docker compose -f docker-compose.yml -f docker-compose.gitlab.yml up -d
 ```
 
-Both paths produce identical containers — same source, same CI, same images byte-for-byte. Pick whichever ecosystem you already use.
+The GitHub path is the AMUN SIGNAL source of truth. During Phase 0, Docker Compose still consumes the audited upstream runtime images while AMUN-native release automation is being established.
 
 Open `http://localhost:3000` to view the dashboard! *(Requires [Docker Desktop](https://www.docker.com/products/docker-desktop/) or Docker Engine)*
 
@@ -174,9 +172,9 @@ The production frontend ships with a hydration-compatible CSP and a strict nonce
 ```bash
 # Back up any local config you want to keep (.env, etc.)
 cd ..
-rm -rf Shadowbroker
-git clone https://github.com/bigbodycobain/Shadowbroker.git
-cd Shadowbroker
+rm -rf Amun-Signal
+git clone https://github.com/eldoctorams/Amun-Signal.git
+cd Amun-Signal
 docker compose pull
 docker compose up -d
 ```
@@ -693,8 +691,8 @@ ShadowBroker v0.9.7 is composed of three vertically-stacked planes — the **Ope
 The repo includes a `docker-compose.yml` that pulls pre-built images from GitHub Container Registry.
 
 ```bash
-git clone https://github.com/BigBodyCobain/Shadowbroker.git
-cd Shadowbroker
+git clone https://github.com/eldoctorams/Amun-Signal.git
+cd Amun-Signal
 # Add your API keys in a repo-root .env file (optional — see Environment Variables below)
 docker compose pull
 docker compose up -d
@@ -857,8 +855,8 @@ If you want to modify the code or run from source:
 
 ```bash
 # Clone the repository
-git clone https://github.com/BigBodyCobain/Shadowbroker.git
-cd Shadowbroker
+git clone https://github.com/eldoctorams/Amun-Signal.git
+cd Amun-Signal
 
 # Backend setup
 cd backend
@@ -1200,31 +1198,3 @@ ShadowBroker is built in the open. These people shipped real code:
 | Who | What | PR |
 |-----|------|----|
 | [@Alienmajik](https://gitlab.com/Alienmajik) | Raspberry Pi 5 support — ARM64 packaging, headless deployment notes, runtime tuning for Pi-class hardware | — |
-| [@wa1id](https://github.com/wa1id) | CCTV ingestion fix — threaded SQLite, persistent DB, startup hydration, cluster clickability | #92 |
-| [@AlborzNazari](https://github.com/AlborzNazari) | Spain DGT + Madrid CCTV sources, STIX 2.1 threat intel export | #91 |
-| [@adust09](https://github.com/adust09) | Power plants layer, East Asia intel coverage (JSDF bases, ICAO enrichment, Taiwan news, military classification) | #71, #72, #76, #77, #87 |
-| [@Xpirix](https://github.com/Xpirix) | LocateBar style and interaction improvements | #78 |
-| [@imqdcr](https://github.com/imqdcr) | Ship toggle split (4 categories) + stable MMSI/callsign entity IDs | — |
-| [@csysp](https://github.com/csysp) | Dismissible threat alerts + stable entity IDs for GDELT & News | #48, #63 |
-| [@suranyami](https://github.com/suranyami) | Parallel multi-arch Docker builds (11min → 3min) + runtime BACKEND_URL fix | #35, #44 |
-| [@chr0n1x](https://github.com/chr0n1x) | Kubernetes / Helm chart architecture for HA deployments | — |
-
-</details>
-
----
-
-## ⚠️ Disclaimer
-
-This tool is built entirely on publicly available, open-source intelligence (OSINT) data. No classified, restricted, or non-public data is used. Carrier positions are estimates based on public reporting. The military-themed UI is purely aesthetic.
-
----
-
-## 📜 License
-
-This project is for educational and personal research purposes. See individual API provider terms of service for data usage restrictions.
-
----
-
-<p align="center">
-  <sub>Built with ☕ and too many API calls</sub>
-</p>
