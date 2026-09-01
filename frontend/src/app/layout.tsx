@@ -14,8 +14,8 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'WORLDVIEW // ORBITAL TRACKING',
-  description: 'Advanced Geopolitical Risk Dashboard',
+  title: 'AMUN SIGNAL — Intelligence Investigation OS',
+  description: 'AI-assisted, evidence-first open-source intelligence investigation platform.',
 };
 
 // The dashboard is a live local runtime, not a static landing page. If Next
