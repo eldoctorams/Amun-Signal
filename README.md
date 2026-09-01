@@ -1,28 +1,39 @@
 <p align="center">
-  <h1 align="center">🛰️ S H A D O W B R O K E R</h1>
-  <p align="center"><strong>Global Threat Intercept — Real-Time Geospatial Intelligence Platform</strong></p>
-  <p align="center">
+  <h1 align="center">AMUN SIGNAL</h1>
+  <p align="center"><strong>The unseen becomes intelligence.</strong></p>
+  <p align="center">Evidence-first, AI-assisted Intelligence Investigation OS</p>
+</p>
 
-  </p>
+![AMUN SIGNAL — The unseen becomes intelligence](./docs/assets/amun-signal-hero.jpg)
+
+![AMUN SIGNAL mission control](./docs/assets/amun-signal-interface.png)
+
+<p align="center">
+  <a href="./LICENSE"><img alt="AGPL-3.0" src="https://img.shields.io/badge/license-AGPL--3.0-d7b35d"></a>
+  <a href="./docs/AMUN_PRODUCT_ROADMAP.md"><img alt="Phase 0" src="https://img.shields.io/badge/status-phase%200-5dd6ca"></a>
+  <img alt="Local first" src="https://img.shields.io/badge/runtime-local--first-111412">
 </p>
 
 ---
 
+**AMUN SIGNAL** turns real-time, multi-domain public-source telemetry into structured investigations. It combines a global geospatial mission view with durable cases, entity intelligence, auditable evidence provenance, knowledge graphs, and an AI co-analyst designed to cite evidence rather than invent certainty.
 
+> The world is overflowing with signals. AMUN SIGNAL is built to reveal which ones matter, connect what appears unrelated, preserve why every conclusion was reached, and transform the unseen into intelligence an investigator can defend.
 
+**Suggested GitHub description:** `Evidence-first AI intelligence investigation OS — fuse public signals, map entities, preserve provenance, and turn the unseen into defensible intelligence.`
 
-[![ShadowBroker](/uploads/46f99d19fa141a2efba37feee9de8aab/Title.jpg)](https://github.com/user-attachments/assets/248208ec-62f7-49d1-831d-4bd0a1fa6852)
+**Topics:** `osint` · `threat-intelligence` · `fraud-investigation` · `geospatial-intelligence` · `knowledge-graph` · `evidence-ledger` · `ai-analyst` · `fastapi` · `nextjs` · `maplibre`
 
+The project is in active transformation. Phase 0 establishes the AMUN design system, investigation domain, evidence integrity primitives, and a safe migration path from the upstream live-map runtime. See the [product roadmap](./docs/AMUN_PRODUCT_ROADMAP.md), [architecture](./docs/AMUN_ARCHITECTURE.md), and [upstream notice](./NOTICE.md).
 
+<!-- The product screenshot is generated from the running UI by .github/workflows/capture-amun-preview.yml. -->
 
-
-
-**ShadowBroker** is a decentralized intelligence platform that aggregates real-time, multi-domain OSINT telemetry from 60+ live intelligence feeds into a single dark-ops map interface. Aircraft, ships, satellites, conflict zones, CCTV networks, GPS jamming, internet-connected devices, police scanners, mesh radio nodes, and breaking geopolitical events — all updating in real time on one screen as well as an obfuscated communications protocol and information exchange infrastructure.
+> AMUN SIGNAL is a modified work based on [Shadowbroker](https://github.com/BigBodyCobain/Shadowbroker). It preserves the upstream Git history, AGPL-3.0 license, notices, and data attribution obligations.
 
 <details>
 <summary>🛰️ Project Description</summary>
 
-Built with **Next.js**, **MapLibre GL**, **FastAPI**, and **Python**. 40+ toggleable data layers, including SAR ground-change detection, **Telegram OSINT** (public channel previews geoparsed onto the map), a **server-side recon toolkit** (DNS, WHOIS, sanctions, BGP, IP sweep, and more), supply-chain risk overlays, and malware/C2 + CISA KEV cyber threat feeds. Multiple visual modes (DEFAULT / SATELLITE / FLIR / NVG / CRT). Right-click any point on Earth for a country dossier, head-of-state lookup, entity-graph expansion, and the latest Sentinel-2 satellite photo. ShadowBroker has no accounts, product telemetry, or analytics; the dashboard talks to your self-hosted backend. Sensitive recon and Shodan queries never hit third-party APIs from the browser — they are proxied through the backend with SSRF guards and local-operator auth. The **OpenClaw / agent command channel** exposes the same recon backends plus full telemetry search — no separate API integration required.
+Built with **Next.js**, **MapLibre GL**, **FastAPI**, and **Python**. The inherited runtime provides 40+ toggleable data layers, including SAR ground-change detection, public Telegram OSINT previews, a server-side recon toolkit, supply-chain risk overlays, and public cyber-threat feeds. Sensitive recon and Shodan queries are proxied through the self-hosted backend with SSRF guards and local-operator authorization.
 
 Designed for analysts, researchers, radio operators, and anyone who wants to see what the world looks like when every public signal is on the same map.
 </details>

@@ -1,0 +1,2 @@
+"""AMUN SIGNAL domain layer."""
+

@@ -1,7 +1,7 @@
 {
   "brand": {
-    "title": "影子经纪人",
-    "subtitle": "全球威胁拦截系统",
+    "title": "AMUN SIGNAL",
+    "subtitle": "让不可见成为情报",
     "systemMetrics": "光学 可视:113 源:180 密度:1.42 0.8ms"
   },
   "nav": {
@@ -127,7 +127,7 @@
     "close": "关闭"
   },
   "onboarding": {
-    "welcome": "欢迎使用 ShadowBroker",
+    "welcome": "欢迎使用 AMUN SIGNAL",
     "getStarted": "开始使用"
   },
   "news": {
