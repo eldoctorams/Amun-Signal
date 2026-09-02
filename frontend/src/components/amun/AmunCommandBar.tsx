@@ -2,17 +2,23 @@
 
 import { Activity, Bot, Boxes, FileCheck2, FolderKanban, Network } from 'lucide-react';
 import { AMUN_BRAND } from '@/lib/brand';
+import type { WorkspaceId } from '@/lib/investigationWorkspace';
 
 const workspaces = [
-  { label: 'Mission Control', icon: Activity, active: true },
-  { label: 'Cases', icon: FolderKanban, active: false },
-  { label: 'Graph', icon: Network, active: false },
-  { label: 'Evidence', icon: FileCheck2, active: false },
-  { label: 'Entities', icon: Boxes, active: false },
-  { label: 'AI Analyst', icon: Bot, active: false },
+  { id: 'mission', label: 'Mission Control', icon: Activity, enabled: true },
+  { id: 'cases', label: 'Cases', icon: FolderKanban, enabled: true },
+  { id: 'graph', label: 'Graph', icon: Network, enabled: false },
+  { id: 'evidence', label: 'Evidence', icon: FileCheck2, enabled: true },
+  { id: 'entities', label: 'Entities', icon: Boxes, enabled: true },
+  { id: 'analyst', label: 'AI Analyst', icon: Bot, enabled: false },
 ] as const;
 
-export default function AmunCommandBar() {
+interface AmunCommandBarProps {
+  activeWorkspace: WorkspaceId;
+  onSelectWorkspace: (workspace: WorkspaceId) => void;
+}
+
+export default function AmunCommandBar({ activeWorkspace, onSelectWorkspace }: AmunCommandBarProps) {
   return (
     <header className="amun-command-bar" aria-label="AMUN SIGNAL workspace navigation">
       <a className="amun-command-brand" href={AMUN_BRAND.website} target="_blank" rel="noreferrer">
@@ -26,13 +32,15 @@ export default function AmunCommandBar() {
       </a>
 
       <nav className="amun-workspaces" aria-label="Investigation workspaces">
-        {workspaces.map(({ label, icon: Icon, active }) => (
+        {workspaces.map(({ id, label, icon: Icon, enabled }) => (
           <button
             key={label}
-            className={active ? 'is-active' : undefined}
+            className={activeWorkspace === id ? 'is-active' : undefined}
             type="button"
-            disabled={!active}
-            title={active ? `${label} workspace` : `${label} — foundation in progress`}
+            disabled={!enabled}
+            onClick={() => onSelectWorkspace(id)}
+            aria-current={activeWorkspace === id ? 'page' : undefined}
+            title={enabled ? `${label} workspace` : `${label} — planned capability`}
           >
             <Icon size={14} strokeWidth={1.7} />
             <span>{label}</span>

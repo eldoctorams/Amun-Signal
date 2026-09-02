@@ -71,6 +71,8 @@ import { LocateBar } from './LocateBar';
 import { SentinelInfoModal } from './SentinelInfoModal';
 import SarAoiEditorModal from '@/components/SarAoiEditorModal';
 import AmunCommandBar from '@/components/amun/AmunCommandBar';
+import InvestigationWorkspace from '@/components/amun/InvestigationWorkspace';
+import type { WorkspaceId } from '@/lib/investigationWorkspace';
 
 // Use dynamic loads for Maplibre to avoid SSR window is not defined errors
 const MaplibreViewer = dynamic(() => import('@/components/MaplibreViewer'), { ssr: false });
@@ -106,6 +108,7 @@ export default function Dashboard() {
   // close over it without hitting a temporal dead zone.
 
   const [uiVisible, setUiVisible] = useState(true);
+  const [activeWorkspace, setActiveWorkspace] = useState<WorkspaceId>('mission');
   const [leftOpen, setLeftOpen] = useState(true);
   const [rightOpen, setRightOpen] = useState(true);
   const [tickerOpen, setTickerOpen] = useState(true);
@@ -571,7 +574,11 @@ export default function Dashboard() {
 
         {uiVisible && (
           <>
-            <AmunCommandBar />
+            <AmunCommandBar activeWorkspace={activeWorkspace} onSelectWorkspace={setActiveWorkspace} />
+
+            {activeWorkspace !== 'mission' && (
+              <InvestigationWorkspace workspace={activeWorkspace} onClose={() => setActiveWorkspace('mission')} />
+            )}
 
             {/* SYSTEM METRICS TOP RIGHT — removed, label moved into TimelineScrubber */}
 

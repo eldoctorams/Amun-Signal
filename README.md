@@ -34,6 +34,10 @@
 
 ## Investigation model
 
+![AMUN SIGNAL Investigation Workspace](./docs/assets/amun-signal-investigation-workspace.png)
+
+The integrated workspace turns public signals into governed case records. Investigators can search and filter cases, connect entities with explicit confidence, preserve source provenance, and review the evidence ledger without leaving Mission Control. The included scenarios are clearly marked synthetic training data; newly created cases remain local until a governed backend is configured.
+
 | Primitive | Purpose |
 |---|---|
 | Case | The investigation container and decision history |
