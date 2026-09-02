@@ -27,12 +27,20 @@ async function capture() {
 
   const output = path.resolve(__dirname, '../../docs/assets/amun-signal-interface.png');
   await page.screenshot({ path: output, type: 'png' });
+
+  await page.getByRole('button', { name: /Cases/ }).click();
+  await page.getByRole('heading', { name: 'Investigation Workspace' }).waitFor();
+  await page.waitForTimeout(500);
+  const investigationOutput = path.resolve(
+    __dirname,
+    '../../docs/assets/amun-signal-investigation-workspace.png',
+  );
+  await page.screenshot({ path: investigationOutput, type: 'png' });
   await browser.close();
-  process.stdout.write(`${output}\n`);
+  process.stdout.write(`${output}\n${investigationOutput}\n`);
 }
 
 capture().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-
