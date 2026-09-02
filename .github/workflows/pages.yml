@@ -1,0 +1,47 @@
+name: Deploy AMUN SIGNAL interface
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "docs/assets/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare static showcase
+        run: |
+          mkdir -p .pages/assets
+          cp -R site/. .pages/
+          cp docs/assets/amun-signal-hero.jpg .pages/assets/
+          cp docs/assets/amun-signal-interface.png .pages/assets/
+          if [ -f docs/assets/amun-signal-investigation-workspace.png ]; then
+            cp docs/assets/amun-signal-investigation-workspace.png .pages/assets/
+          fi
+          touch .pages/.nojekyll
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .pages
+      - id: deployment
+        uses: actions/deploy-pages@v4
