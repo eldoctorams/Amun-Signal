@@ -11,6 +11,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_SURFACES = (
     Path("README.md"),
+    Path("pyproject.toml"),
+    Path("uv.lock"),
+    Path(".github/CODEOWNERS"),
+    Path(".github/copilot-instructions.md"),
+    Path(".github/pull_request_template.md"),
     Path("frontend/src/app/layout.tsx"),
     Path("frontend/src/lib/brand.ts"),
     Path("frontend/src/components/amun"),

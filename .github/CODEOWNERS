@@ -12,21 +12,21 @@
 # The i18n layer itself (no network calls, no telemetry, static JSON
 # bundled at build) is the structural guarantee that makes this safe;
 # changes to it need owner review.
-/frontend/src/i18n/                @BigBodyCobain
+/frontend/src/i18n/                @eldoctorams
 
 # ── Security-sensitive code paths ──
-/backend/auth.py                   @BigBodyCobain
-/backend/routers/wormhole.py       @BigBodyCobain
-/backend/services/mesh/            @BigBodyCobain
-/backend/services/fetchers/        @BigBodyCobain
+/backend/auth.py                   @eldoctorams
+/backend/routers/wormhole.py       @eldoctorams
+/backend/services/mesh/            @eldoctorams
+/backend/services/fetchers/        @eldoctorams
 
 # ── CI / build / deploy infra ──
-/.github/workflows/                @BigBodyCobain
-/.gitlab-ci.yml                    @BigBodyCobain
-/docker-compose.yml                @BigBodyCobain
-/docker-compose.gitlab.yml         @BigBodyCobain
-/helm/                             @BigBodyCobain
+/.github/workflows/                @eldoctorams
+/.gitlab-ci.yml                    @eldoctorams
+/docker-compose.yml                @eldoctorams
+/docker-compose.gitlab.yml         @eldoctorams
+/helm/                             @eldoctorams
 
 # ── This file and policy docs ──
-/.github/CODEOWNERS                @BigBodyCobain
-/CONTRIBUTING.md                   @BigBodyCobain
+/.github/CODEOWNERS                @eldoctorams
+/CONTRIBUTING.md                   @eldoctorams
