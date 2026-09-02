@@ -8,6 +8,7 @@ on:
       - amun/phase-0-foundation
     paths-ignore:
       - docs/assets/amun-signal-interface.png
+      - docs/assets/amun-signal-investigation-workspace.png
 
 permissions:
   contents: write
@@ -56,7 +57,9 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # The upstream project ignores docs/assets globally; this generated,
           # intentional launch artifact must still be versioned.
-          git add --force docs/assets/amun-signal-interface.png
+          git add --force \
+            docs/assets/amun-signal-interface.png \
+            docs/assets/amun-signal-investigation-workspace.png
           if git diff --cached --quiet; then
             exit 0
           fi
