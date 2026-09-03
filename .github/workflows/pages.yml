@@ -36,10 +36,7 @@ jobs:
             cp docs/assets/amun-signal-investigation-workspace.png .pages/assets/
           fi
           touch .pages/.nojekyll
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .pages
