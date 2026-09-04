@@ -7,6 +7,7 @@
     <meta name="description" content="AMUN SIGNAL — evidence-first, AI-assisted intelligence investigation OS." />
     <title>AMUN SIGNAL — Intelligence, Revealed</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="lab.css" />
   </head>
   <body>
     <div class="grid" aria-hidden="true"></div>
@@ -43,7 +44,12 @@
         <p class="eyebrow">THE AMUN DOCTRINE</p>
         <div><h2>See more.<br />Prove more.<br /><em>Invent nothing.</em></h2><p>Lawful research. Defensive security. Auditable reasoning. Human accountability. AMUN SIGNAL is engineered around the principle that intelligence earns trust through evidence.</p></div>
       </section>
+      <section id="lab" class="lab section">
+        <div class="lab-copy"><p class="eyebrow">LIVE SIGNAL LAB // LOCAL BROWSER ANALYSIS</p><h2>Turn raw observations into a defensible lead.</h2><p>Paste public-source observations below. AMUN extracts indicators, builds a local entity ledger, assigns transparent confidence, and creates an exportable case snapshot. Nothing leaves your browser.</p></div>
+        <div class="lab-grid"><div class="lab-input"><label>CASE NAME<input id="caseName" value="Operation Nile Glass" /></label><label>RAW OBSERVATIONS<textarea id="signals">2026-09-04 08:12Z: Domain secure-nile.example resolved to 203.0.113.42. Contact analyst@example.test referenced wallet 0x1111111111111111111111111111111111111111. Confidence: high.</textarea></label><button id="analyze">ANALYZE SIGNALS</button><button id="export" class="ghost">EXPORT CASE JSON</button><p id="privacy">LOCAL MODE // ZERO NETWORK TRANSMISSION</p></div><div class="lab-output"><div class="metrics"><article><small>INDICATORS</small><strong id="indicatorCount">0</strong></article><article><small>CONFIDENCE</small><strong id="confidence">—</strong></article><article><small>CASE HASH</small><strong id="caseHash">—</strong></article></div><h3>ENTITY & EVIDENCE LEDGER</h3><div id="ledger" class="ledger"></div></div></div>
+      </section>
     </main>
     <footer><span>AMUN SIGNAL</span><span>Designed and led by Dr. Ahmed Mohamed El Sayed</span><span>AUTHORIZED INTELLIGENCE WORKFLOWS</span></footer>
+    <script src="app.js"></script>
   </body>
 </html>
